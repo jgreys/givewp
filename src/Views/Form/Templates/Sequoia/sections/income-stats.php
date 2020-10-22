@@ -14,7 +14,8 @@ if ( $form->has_goal() ) : ?>
 				'sanitize' => false,
 				'decimal'  => false,
 			]
-		)
+		),
+		[ 'form_id' => $form->ID ]
 	);
 
 	// Setup default count value
@@ -31,7 +32,8 @@ if ( $form->has_goal() ) : ?>
 				'sanitize' => false,
 				'decimal'  => false,
 			]
-		)
+		),
+		[ 'form_id' => $form->ID ]
 	);
 
 	// Change values and labels based on goal format
