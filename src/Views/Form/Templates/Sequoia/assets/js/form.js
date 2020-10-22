@@ -193,10 +193,12 @@
 						return;
 					}
 
+					const form = document.querySelector( '.give-form' );
+					const jQueryForm = jQuery( form );
 					const value = $( this ).attr( 'value' );
 					const text = $( this ).text();
-					const symbol = window.give_global_vars.currency_sign;
-					const position = window.give_global_vars.currency_pos;
+					const symbol = Give.form.fn.getInfo( 'currency_symbol', jQueryForm );
+					const position = Give.form.fn.getInfo( 'currency_position', jQueryForm );
 
 					if ( value !== 'custom' ) {
 						const html = position === 'before' ? `<div class="currency currency--before">${ symbol }</div>${ value }` : `${ value }<div class="currency currency--after">${ symbol }</div>`;
