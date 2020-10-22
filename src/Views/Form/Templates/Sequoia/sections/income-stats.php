@@ -6,10 +6,12 @@ if ( $form->has_goal() ) : ?>
 	<?php
 	$goalStats = give_goal_progress_stats( $formId );
 
+	echo print_r( $goalStats, true );
+
 	// Setup default raised value
 	$raised = give_currency_filter(
 		give_format_amount(
-			$form->get_earnings(),
+			$goalStats['raw_actual'],
 			[
 				'sanitize' => false,
 				'decimal'  => false,
@@ -27,7 +29,7 @@ if ( $form->has_goal() ) : ?>
 	// Setup default goal value
 	$goal = give_currency_filter(
 		give_format_amount(
-			$form->get_goal(),
+			$goalStats['raw_goal'],
 			[
 				'sanitize' => false,
 				'decimal'  => false,
