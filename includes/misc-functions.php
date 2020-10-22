@@ -1968,8 +1968,8 @@ function give_goal_progress_stats( $form ) {
 			break;
 
 		case 'amount' === $goal_format:
-			$actual     = give_currency_filter( give_format_amount( $actual ) );
-			$total_goal = give_currency_filter( give_format_amount( $total_goal ) );
+			$actual     = give_currency_filter( give_format_amount( $actual ), [ 'form_id' => $form->ID ] );
+			$total_goal = give_currency_filter( give_format_amount( $total_goal ), [ 'form_id' => $form->ID ] );
 			break;
 
 		default:
